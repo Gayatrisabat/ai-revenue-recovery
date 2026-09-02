@@ -74,3 +74,31 @@ def simulator(verifier) -> LocalEventSimulator:
 @pytest.fixture
 def fixtures_dir() -> Path:
     return FIXTURES_DIR
+
+
+# ---------------------------------------------------------------------------
+# Policy-engine fixtures
+# ---------------------------------------------------------------------------
+
+POLICIES_DIR = Path(__file__).resolve().parent.parent / "policies"
+
+
+@pytest.fixture
+def policy_config():
+    from policy.config import load_policy_config
+
+    return load_policy_config(POLICIES_DIR / "recovery-policy.yaml")
+
+
+@pytest.fixture
+def economic_tables():
+    from policy.config import load_economic_tables
+
+    return load_economic_tables(POLICIES_DIR / "economic-tables.yaml")
+
+
+@pytest.fixture
+def policy_engine(policy_config, economic_tables, db):
+    from policy.engine import RecoveryPolicyEngine
+
+    return RecoveryPolicyEngine(policy_config, economic_tables, db.cases, db.audit_log)
