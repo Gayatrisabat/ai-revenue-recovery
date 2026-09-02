@@ -1,0 +1,43 @@
+# Recovery Policy — Approved Demo Values
+#
+# Status: APPROVED for the hackathon MVP demo only (docs/policy-decisions.md).
+# Every value below has been explicitly confirmed by the business owner and
+# replaces the corresponding `__APPROVE__` placeholder in that document.
+#
+# Code must read these values from this file at runtime — never hard-code
+# a policy number. Any change to a value below requires bumping
+# policy_version (docs/policy-decisions.md header: "Every policy change
+# must increment the version").
+
+policy_version: policy_demo_v1
+currency: INR
+
+# --- Retry / contact limits (docs/policy-decisions.md §2-4) -----------------
+max_payment_retries_per_episode: 3
+max_customer_contacts_per_week: 2
+cooldown_hours_between_contacts: 24
+
+# --- Attribution (docs/policy-decisions.md §10) -----------------------------
+attribution_window_hours: 72
+
+# --- Economic thresholds (docs/policy-decisions.md §5-6) -------------------
+minimum_expected_net_recovery_minor: 500
+high_value_approval_threshold_minor: 100000
+
+# --- Stop rules (docs/policy-decisions.md §7) -------------------------------
+# Safety invariants: an opted-out or disputed customer must never receive
+# automated outreach; a paid or canceled subscription must never receive
+# another recovery action.
+stop_on_opt_out: true
+stop_on_dispute: true
+stop_on_paid_subscription: true
+stop_on_canceled_subscription: true
+
+# --- Unknown-decline handling (docs/policy-decisions.md §8) ----------------
+escalate_on_unknown_decline: true
+
+# --- Execution safety (docs/policy-decisions.md §16) ------------------------
+# MUST remain false for the MVP. Changing either value requires a separate,
+# explicit human approval and is outside the current demo scope.
+real_money_execution_enabled: false
+real_messaging_enabled: false
