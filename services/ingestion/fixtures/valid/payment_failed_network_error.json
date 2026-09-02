@@ -1,0 +1,15 @@
+{
+  "event_id": "evt_aarav_network_error_01",
+  "event_type": "subscription.payment_failed",
+  "occurred_at": "2026-08-23T10:30:00Z",
+  "source": "mock_gateway",
+  "customer_id": "cus_synthetic_aarav",
+  "subscription_id": "sub_synthetic_aarav_monthly",
+  "amount_minor": 99900,
+  "currency": "INR",
+  "decline_code": "network_error",
+  "payment_method_type": "card",
+  "payment_method_fingerprint": "pm_fp_synthetic_001",
+  "attempt_number": 1,
+  "metadata": {}
+}

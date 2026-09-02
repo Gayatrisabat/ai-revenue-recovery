@@ -1,0 +1,15 @@
+{
+  "event_id": "evt_invalid_null_amount",
+  "event_type": "subscription.payment_failed",
+  "occurred_at": "2026-08-23T10:30:00Z",
+  "source": "mock_gateway",
+  "customer_id": "cus_synthetic_null",
+  "subscription_id": "sub_synthetic_null",
+  "amount_minor": null,
+  "currency": "INR",
+  "decline_code": "network_error",
+  "payment_method_type": "card",
+  "payment_method_fingerprint": "pm_fp_synthetic_005",
+  "attempt_number": 1,
+  "metadata": {}
+}

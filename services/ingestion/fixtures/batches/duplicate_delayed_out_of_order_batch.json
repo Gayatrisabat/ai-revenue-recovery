@@ -1,0 +1,97 @@
+[
+  {
+    "label": "vikram_first_failure",
+    "received_offset_seconds": 0,
+    "event": {
+      "event_id": "evt_vikram_expired_card_01",
+      "event_type": "subscription.payment_failed",
+      "occurred_at": "2026-08-23T10:00:00Z",
+      "source": "mock_gateway",
+      "customer_id": "cus_synthetic_vikram",
+      "subscription_id": "sub_synthetic_vikram_monthly",
+      "amount_minor": 299900,
+      "currency": "INR",
+      "decline_code": "expired_card",
+      "payment_method_type": "card",
+      "payment_method_fingerprint": "pm_fp_synthetic_vikram",
+      "attempt_number": 1,
+      "metadata": {}
+    }
+  },
+  {
+    "label": "vikram_duplicate_resubmit",
+    "received_offset_seconds": 1,
+    "event": {
+      "event_id": "evt_vikram_expired_card_01",
+      "event_type": "subscription.payment_failed",
+      "occurred_at": "2026-08-23T10:00:00Z",
+      "source": "mock_gateway",
+      "customer_id": "cus_synthetic_vikram",
+      "subscription_id": "sub_synthetic_vikram_monthly",
+      "amount_minor": 299900,
+      "currency": "INR",
+      "decline_code": "expired_card",
+      "payment_method_type": "card",
+      "payment_method_fingerprint": "pm_fp_synthetic_vikram",
+      "attempt_number": 1,
+      "metadata": {}
+    }
+  },
+  {
+    "label": "meera_delayed_failure",
+    "received_offset_seconds": 300,
+    "event": {
+      "event_id": "evt_meera_insufficient_funds_delayed_01",
+      "event_type": "subscription.payment_failed",
+      "occurred_at": "2026-08-23T08:00:00Z",
+      "source": "mock_gateway",
+      "customer_id": "cus_synthetic_meera",
+      "subscription_id": "sub_synthetic_meera_monthly",
+      "amount_minor": 49900,
+      "currency": "INR",
+      "decline_code": "insufficient_funds",
+      "payment_method_type": "card",
+      "payment_method_fingerprint": "pm_fp_synthetic_meera",
+      "attempt_number": 1,
+      "metadata": {}
+    }
+  },
+  {
+    "label": "kavya_out_of_order_first_submitted",
+    "received_offset_seconds": 10,
+    "event": {
+      "event_id": "evt_kavya_network_error_attempt_2",
+      "event_type": "subscription.payment_failed",
+      "occurred_at": "2026-08-23T09:00:00Z",
+      "source": "mock_gateway",
+      "customer_id": "cus_synthetic_kavya",
+      "subscription_id": "sub_synthetic_kavya_monthly",
+      "amount_minor": 99900,
+      "currency": "INR",
+      "decline_code": "network_error",
+      "payment_method_type": "card",
+      "payment_method_fingerprint": "pm_fp_synthetic_kavya",
+      "attempt_number": 2,
+      "metadata": {}
+    }
+  },
+  {
+    "label": "kavya_out_of_order_second_submitted",
+    "received_offset_seconds": 11,
+    "event": {
+      "event_id": "evt_kavya_network_error_attempt_1",
+      "event_type": "subscription.payment_failed",
+      "occurred_at": "2026-08-23T08:30:00Z",
+      "source": "mock_gateway",
+      "customer_id": "cus_synthetic_kavya",
+      "subscription_id": "sub_synthetic_kavya_monthly",
+      "amount_minor": 99900,
+      "currency": "INR",
+      "decline_code": "network_error",
+      "payment_method_type": "card",
+      "payment_method_fingerprint": "pm_fp_synthetic_kavya",
+      "attempt_number": 1,
+      "metadata": {}
+    }
+  }
+]

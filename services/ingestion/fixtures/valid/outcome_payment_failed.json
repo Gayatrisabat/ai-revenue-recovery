@@ -1,0 +1,12 @@
+{
+  "event_id": "evt_priya_outcome_failure_01",
+  "event_type": "payment.failed",
+  "occurred_at": "2026-08-24T12:00:00Z",
+  "source": "mock_gateway",
+  "customer_id": "cus_synthetic_priya",
+  "subscription_id": "sub_synthetic_priya_monthly",
+  "amount_minor": 149900,
+  "currency": "INR",
+  "execution_id": "exec_synthetic_002",
+  "metadata": {}
+}

@@ -1,0 +1,11 @@
+{
+  "event_id": "evt_invalid_unknown_type",
+  "event_type": "checkout.abandoned",
+  "occurred_at": "2026-08-23T10:30:00Z",
+  "source": "mock_gateway",
+  "customer_id": "cus_synthetic_checkout",
+  "subscription_id": "sub_synthetic_checkout",
+  "amount_minor": 5000,
+  "currency": "INR",
+  "metadata": {}
+}

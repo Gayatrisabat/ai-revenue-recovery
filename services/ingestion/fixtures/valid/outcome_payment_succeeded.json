@@ -1,0 +1,12 @@
+{
+  "event_id": "evt_aarav_outcome_success_01",
+  "event_type": "payment.succeeded",
+  "occurred_at": "2026-08-24T09:00:00Z",
+  "source": "mock_gateway",
+  "customer_id": "cus_synthetic_aarav",
+  "subscription_id": "sub_synthetic_aarav_monthly",
+  "amount_minor": 99900,
+  "currency": "INR",
+  "execution_id": "exec_synthetic_001",
+  "metadata": {}
+}

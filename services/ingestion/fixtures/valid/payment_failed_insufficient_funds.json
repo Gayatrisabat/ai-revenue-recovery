@@ -1,0 +1,15 @@
+{
+  "event_id": "evt_priya_insufficient_funds_01",
+  "event_type": "subscription.payment_failed",
+  "occurred_at": "2026-08-23T11:00:00Z",
+  "source": "mock_gateway",
+  "customer_id": "cus_synthetic_priya",
+  "subscription_id": "sub_synthetic_priya_monthly",
+  "amount_minor": 149900,
+  "currency": "INR",
+  "decline_code": "insufficient_funds",
+  "payment_method_type": "card",
+  "payment_method_fingerprint": "pm_fp_synthetic_002",
+  "attempt_number": 1,
+  "metadata": {}
+}

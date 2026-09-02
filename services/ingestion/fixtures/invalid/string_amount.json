@@ -1,0 +1,15 @@
+{
+  "event_id": "evt_invalid_string_amount",
+  "event_type": "subscription.payment_failed",
+  "occurred_at": "2026-08-23T10:30:00Z",
+  "source": "mock_gateway",
+  "customer_id": "cus_synthetic_string",
+  "subscription_id": "sub_synthetic_string",
+  "amount_minor": "a lot of money",
+  "currency": "INR",
+  "decline_code": "network_error",
+  "payment_method_type": "card",
+  "payment_method_fingerprint": "pm_fp_synthetic_006",
+  "attempt_number": 1,
+  "metadata": {}
+}
