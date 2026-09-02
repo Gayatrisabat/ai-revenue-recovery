@@ -147,6 +147,9 @@ class RecoveryCase:
     last_contact_at: datetime | None = None
     opted_out: bool = False
     disputed: bool = False
+    legal_hold: bool = False
+    subscription_canceled: bool = False
+    already_paid: bool = False
     policy_version: str | None = None
     model_version: str | None = None
 
