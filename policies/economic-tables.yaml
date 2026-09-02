@@ -1,0 +1,90 @@
+# Economic Tables — DEMO VALUES, NOT YET BUSINESS-APPROVED
+#
+# Status: these fill the __APPROVE__ placeholders in docs/policy-decisions.md
+# §11 (Action Cost Table), §12 (Risk Penalty Table), and §13 (Success
+# Probability Overrides) with clearly-labeled demonstration numbers so the
+# expected-value formula has something concrete to compute against.
+#
+# Unlike policies/recovery-policy.yaml, nothing in this file has been
+# confirmed by the business owner yet. Do not present these numbers as
+# calibrated production estimates (docs/policy-decisions.md §13 warning).
+# Replace every value here with an approved one before any real-money or
+# real-messaging execution is enabled.
+
+schema_version: economic_tables_demo_v1
+
+# action_cost_minor: the direct cost of attempting the action (e.g. a
+#   payment-gateway retry fee, a transactional-email send cost).
+# operational_cost_minor: overhead cost of running the action through the
+#   system (monitoring, support load, etc.).
+actions:
+  retry_after_24_hours:
+    action_cost_minor: 500
+    operational_cost_minor: 100
+  retry_after_72_hours:
+    action_cost_minor: 500
+    operational_cost_minor: 100
+  send_approved_email_template_01:
+    action_cost_minor: 200
+    operational_cost_minor: 50
+  offer_approved_alternate_method:
+    action_cost_minor: 300
+    operational_cost_minor: 100
+  escalate_to_human:
+    action_cost_minor: 5000
+    operational_cost_minor: 2000
+  stop_pursuit:
+    action_cost_minor: 0
+    operational_cost_minor: 0
+
+# Flat risk penalty applied by the case's risk_tier (domain.enums.RiskTier),
+# regardless of which candidate is being scored.
+risk_penalty_minor:
+  standard: 0
+  elevated: 1000
+  high: 5000
+
+# Demo success-probability estimates per (decline_code, candidate).
+# Architecture example for insufficient_funds x retry_after_24_hours is
+# 0.18 in docs/revised-architecture.md §7 -- reused here directly; every
+# other cell is a plausible synthetic estimate, not a fitted number.
+success_probability_by_decline_code:
+  insufficient_funds:
+    retry_after_24_hours: 0.12
+    retry_after_72_hours: 0.18
+    send_approved_email_template_01: 0.30
+    offer_approved_alternate_method: 0.20
+  expired_card:
+    retry_after_24_hours: 0.01
+    retry_after_72_hours: 0.01
+    send_approved_email_template_01: 0.15
+    offer_approved_alternate_method: 0.45
+  issuer_decline:
+    retry_after_24_hours: 0.15
+    retry_after_72_hours: 0.20
+    send_approved_email_template_01: 0.20
+    offer_approved_alternate_method: 0.20
+  network_error:
+    retry_after_24_hours: 0.65
+    retry_after_72_hours: 0.70
+    send_approved_email_template_01: 0.15
+    offer_approved_alternate_method: 0.10
+  do_not_honor:
+    retry_after_24_hours: 0.08
+    retry_after_72_hours: 0.12
+    send_approved_email_template_01: 0.15
+    offer_approved_alternate_method: 0.20
+  stolen_card:
+    retry_after_24_hours: 0.0
+    retry_after_72_hours: 0.0
+    send_approved_email_template_01: 0.0
+    offer_approved_alternate_method: 0.0
+  unknown:
+    retry_after_24_hours: 0.05
+    retry_after_72_hours: 0.05
+    send_approved_email_template_01: 0.05
+    offer_approved_alternate_method: 0.05
+
+# escalate_to_human's "success" is a human recovering the payment after
+# review -- a single flat demo estimate rather than one per decline code.
+escalation_success_probability: 0.35
